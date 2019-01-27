@@ -4,12 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MouseEmulator
+namespace GormLib
 {
-    class Program
+    public enum MessageType
     {
-        static void Main(string[] args)
-        {
-        }
+        MoveMouse = 0,
+        LeftClick = 1,
+        RightClick = 2,
     }
 }
