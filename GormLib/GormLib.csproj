@@ -46,6 +46,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BluetoothManager.cs" />
+    <Compile Include="Logger.cs" />
     <Compile Include="MessageModel\Message.cs" />
     <Compile Include="MessageModel\MessageHandlers\HandlerLeftClick.cs" />
     <Compile Include="MessageModel\MessageHandlers\HandlerMoveMouse.cs" />
