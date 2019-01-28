@@ -30,6 +30,8 @@ namespace GormWpf
         {
             InitializeComponent();
 
+            LogHelper lh = new LogHelper();
+            LogHelper.OnlogTextReceived += (a, b) => updateGui(a, b);
             Thread blueToothServerConnectThread = new Thread(new ThreadStart(serverConnectThread));
             blueToothServerConnectThread.Start();
         }
@@ -44,7 +46,7 @@ namespace GormWpf
 
             this.Dispatcher.Invoke(new Action(() =>
             {
-                updateGui("Client connected");
+                updateGui("Info","Client connected");
             }));
 
             Stream stream = bluetoothClient.GetStream();
@@ -59,8 +61,8 @@ namespace GormWpf
             // BluetoothManager bluetoothManager = new BluetoothManager();
         }
 
-        public void updateGui(string text) {
-            textbox1.AppendText(text);
+        public void updateGui(string status, string text) {
+            textbox1.AppendText(status + text);
         }
     }
 }
