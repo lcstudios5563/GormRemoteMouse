@@ -18,6 +18,7 @@ using System.Threading;
 using GormLib;
 using System.IO;
 using GormLib.MessageModel;
+using GormLibWpf;
 
 namespace GormWpf
 {
@@ -29,6 +30,7 @@ namespace GormWpf
         public MainWindow()
         {
             InitializeComponent();
+            DataContext = new MainWindowViewModel();
 
             LogHelper lh = new LogHelper();
             LogHelper.OnlogTextReceived += (a, b) => updateGui(a, b);
