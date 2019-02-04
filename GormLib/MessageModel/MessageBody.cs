@@ -9,6 +9,6 @@ namespace GormLib.MessageModel
 {
     public abstract class MessageBody
     {
-        public abstract void ProcessMessage(Stream stream, int offset);
+        public abstract void ProcessMessage(byte[] received, int offset);
     }
 }

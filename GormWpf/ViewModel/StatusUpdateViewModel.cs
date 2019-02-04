@@ -6,9 +6,9 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GormLibWpf.Model
+namespace GormLibWpf.ViewModel
 {
-    public class StatusUpdate : INotifyPropertyChanged
+    public class StatusUpdateViewModel : INotifyPropertyChanged
     {
         private string _title;
         private DateTime _dateTime;

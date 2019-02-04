@@ -7,9 +7,9 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
     <Grid>
-        <DataGrid Height="200" MaxHeight="200" ItemsSource="{Binding Path=StatusUpdates}"/>
-        <TextBox x:Name="textbox1" HorizontalAlignment="Left" Height="163" Margin="107,77,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="141"/>
-        <Button x:Name="button1" Content="Button" HorizontalAlignment="Left" Margin="311,77,0,0" VerticalAlignment="Top" Width="75"/>
+        <DataGrid ItemsSource="{Binding Path=StatusUpdates}" Margin="10,0,105,10"/>
+
+        <Button x:Name="StartButton" Command="{Binding StartCommand}" Content="Start" HorizontalAlignment="Left" Margin="417,10,0,0" VerticalAlignment="Top" Width="74"/>
 
     </Grid>
 </Window>

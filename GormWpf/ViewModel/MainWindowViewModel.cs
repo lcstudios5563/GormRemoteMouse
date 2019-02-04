@@ -1,5 +1,5 @@
 ﻿using GormLib;
-using GormLibWpf.Model;
+using GormLibWpf.Commands;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -10,15 +10,22 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 
-namespace GormLibWpf
+namespace GormLibWpf.ViewModel
 {
     public class MainWindowViewModel : INotifyPropertyChanged
     {
-        private ObservableCollection<StatusUpdate> _statusUpdates = new ObservableCollection<StatusUpdate>();
-        public ObservableCollection<StatusUpdate> StatusUpdates
+        private ObservableCollection<StatusUpdateViewModel> _statusUpdates = new ObservableCollection<StatusUpdateViewModel>();
+        public ObservableCollection<StatusUpdateViewModel> StatusUpdates
         {
             get { return _statusUpdates; }
             set => Set(ref _statusUpdates, value);
+        }
+
+        private StartCommand _startCommand = new StartCommand();
+        public StartCommand StartCommand
+        {
+            get { return _startCommand; }
+            set => Set(ref _startCommand, value);
         }
 
         #region Constructor
@@ -33,16 +40,21 @@ namespace GormLibWpf
         {
             Application.Current.Dispatcher.BeginInvoke(System.Windows.Threading.DispatcherPriority.Normal, (EventHandler)delegate
             {
-                StatusUpdates.Add(new Model.StatusUpdate
+                //StatusUpdates.Add(new StatusUpdateViewModel
+                //{
+                //    Title = title,
+                //    Description = description,
+                //    DateTime = DateTime.Now
+                //});
+                StatusUpdates.Insert(0, new StatusUpdateViewModel
                 {
                     Title = title,
                     Description = description,
                     DateTime = DateTime.Now
                 });
-
                 if (StatusUpdates.Count > 100)
                 {
-                    StatusUpdates.RemoveAt(0);
+                    StatusUpdates.RemoveAt(100);
                 }
             }, null, null);
         }

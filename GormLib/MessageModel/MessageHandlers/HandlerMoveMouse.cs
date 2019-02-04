@@ -9,15 +9,15 @@ namespace GormLib.MessageModel.MessageHandlers
 {
     public class HandlerMoveMouse : MessageBody
     {
-        public override void ProcessMessage(Stream stream, int offset)
+        public override void ProcessMessage(byte[] received, int offset)
         {
-            byte[] received = new byte[1024];
-            int moveX = (short)stream.Read(received, offset, 4);
+            int moveX = BitConverter.ToInt32(received, offset);
             offset = offset + 4;
 
-            int moveY = (short)stream.Read(received, offset, 4);
+            int moveY = BitConverter.ToInt32(received, offset);
             offset = offset + 4;
 
+            LogHelper.Info(string.Format("moving X:{0}, Y:{1}", moveX, moveY));
             Mouse.MoveMouse(moveX, moveY);
         }
     }

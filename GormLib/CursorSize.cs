@@ -6,6 +6,7 @@ using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace GormLib
 {
@@ -49,6 +50,7 @@ namespace GormLib
             ResizeCursor(System.Windows.Forms.Cursors.UpArrow, newSize, CursorShift.Centered);
             ResizeCursor(System.Windows.Forms.Cursors.VSplit, newSize, CursorShift.Centered);
             ResizeCursor(System.Windows.Forms.Cursors.WaitCursor, newSize, CursorShift.LowerRight);
+
         }
 
         private static void ResizeCursor(System.Windows.Forms.Cursor cursor,

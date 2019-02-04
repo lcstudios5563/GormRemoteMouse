@@ -19,6 +19,8 @@ using GormLib;
 using System.IO;
 using GormLib.MessageModel;
 using GormLibWpf;
+using System.Net.Sockets;
+using GormLibWpf.ViewModel;
 
 namespace GormWpf
 {
@@ -32,10 +34,10 @@ namespace GormWpf
             InitializeComponent();
             DataContext = new MainWindowViewModel();
 
-            LogHelper lh = new LogHelper();
-            LogHelper.OnlogTextReceived += (a, b) => updateGui(a, b);
-            Thread blueToothServerConnectThread = new Thread(new ThreadStart(serverConnectThread));
-            blueToothServerConnectThread.Start();
+            //LogHelper lh = new LogHelper();
+            //LogHelper.OnlogTextReceived += (a, b) => updateGui(a, b);
+            //Thread blueToothServerConnectThread = new Thread(new ThreadStart(serverConnectThread));
+            //blueToothServerConnectThread.Start();
         }
 
         private void serverConnectThread() {
@@ -64,7 +66,7 @@ namespace GormWpf
         }
 
         public void updateGui(string status, string text) {
-            textbox1.AppendText(status + text);
+            
         }
     }
 }

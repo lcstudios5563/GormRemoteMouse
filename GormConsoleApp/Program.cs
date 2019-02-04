@@ -17,29 +17,20 @@ namespace GormConsoleApp
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello world");
-            while (true)
-            {
-                Console.WriteLine("Moving Mouse");
-                Mouse.MoveMouse(10, 10);
-                Thread.Sleep(1000);
-            }
-
-            //BluetoothClient client = new BluetoothClient();
-            //List<string> items = new List<string>();
-            //BluetoothDeviceInfo[] devices = client.DiscoverDevicesInRange();
-            //foreach (BluetoothDeviceInfo d in devices)
-            //{
-            //    items.Add(d.DeviceName);
-            //}
-            //serverCode();
+            //Console.WriteLine("Hello world");
             //while (true)
             //{
-
+            //    Console.WriteLine("Moving Mouse");
+            //    Mouse.MoveMouse(10, 10);
+            //    Thread.Sleep(1000);
             //}
 
+            short value = 1;
+            Byte[] bytes = BitConverter.GetBytes(value);
+            bool isLittleEndian = BitConverter.IsLittleEndian;
+            //Console.WriteLine("Finished");
 
-            Console.WriteLine("Finished");
+            short aaa = BitConverter.ToInt16(bytes, 0);
             Console.ReadLine();
         }
 

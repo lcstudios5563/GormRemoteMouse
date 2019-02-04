@@ -9,7 +9,7 @@ namespace GormLib.MessageModel.MessageHandlers
 {
     public class HandlerRightClick : MessageBody
     {
-        public override void ProcessMessage(Stream stream, int offset)
+        public override void ProcessMessage(byte[] received, int offset)
         {
             Mouse.DoRightClick();
         }
