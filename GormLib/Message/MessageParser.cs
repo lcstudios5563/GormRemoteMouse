@@ -1,12 +1,11 @@
-﻿using GormLib.MessageModel;
-using GormLib.MessageModel.MessageHandlers;
+﻿using GormLib.MessageNS.MessageHandlers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GormLib
+namespace GormLib.MessageNS
 {
     public static class MessageParser
     {
@@ -19,7 +18,13 @@ namespace GormLib
                 case MessageType.LeftClick:
                     return new HandlerLeftClick();                   
                 case MessageType.RightClick:
-                    return new HandlerRightClick();                   
+                    return new HandlerRightClick();
+                case MessageType.VolUp:
+                    return new HandlerVolUp();
+                case MessageType.VolDown:
+                    return new HandlerVolDown();
+                case MessageType.VolMute:
+                    return new HandlerVolMute();
                 default:
                     return null;
 

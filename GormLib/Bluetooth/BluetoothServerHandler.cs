@@ -5,25 +5,27 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using GormLib.MessageModel;
+using GormLib.MessageNS;
 using System.Threading;
 
-namespace GormLib
+namespace GormLib.Bluetooth
 {
-    public class BluetoothManager
+    public class BluetoothServerHandler : AbstractBluetoothHandler
     {
         BluetoothListener _bluetoothListener;
-        BluetoothClient _bluetoothClient;
 
-        public BluetoothManager() {
-            Guid guid;
-            guid = new Guid("1e9276ca-904e-4cb3-89a4-fd879958d639");
-            _bluetoothListener = new BluetoothListener(guid);
+        public BluetoothServerHandler() {
+
+        }
+
+        public void ServerStart() {
+
+            _bluetoothListener = new BluetoothListener(_guid);
             _bluetoothListener.Start();
-            LogHelper.Info("BluetoothListener started");
+            LogHelper.Info("Bluetooth Server started");
             _bluetoothClient = _bluetoothListener.AcceptBluetoothClient();
             LogHelper.Info(
-                string.Format("{0} connected", 
+                string.Format("{0} connected",
                 _bluetoothClient.GetRemoteMachineName(_bluetoothListener.LocalEndPoint.Address)));
 
             Stream stream = _bluetoothClient.GetStream();
@@ -33,20 +35,30 @@ namespace GormLib
                 try
                 {
                     Message message = new Message();
-                    message.Deserialize(stream);
+
+                    int bytesRead = message.Deserialize(stream);
+                    if (bytesRead == 0)
+                    {
+                        // 0 bytes returned the client may have disconnected
+                        ServerClose();
+                    }
 
                 }
                 catch (Exception e)
                 {
-                    LogHelper.Error(string.Format("Client disconnected, {0}", e.ToString()));
+                    LogHelper.Error(e.ToString());
                 }
 
             }
-            LogHelper.Warn(string.Format("Client disconnected"));
+            ServerClose();
+        }
+
+        public void ServerClose() {
+            LogHelper.Info (string.Format("Client disconnected, Stopping Server"));
             _bluetoothListener.Stop();
             _bluetoothClient.Dispose();
-            
         }
+
 
     }
 }

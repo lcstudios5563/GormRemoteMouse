@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GormLib.MessageModel.MessageHandlers
+namespace GormLib.MessageNS.MessageHandlers
 {
     public class HandlerMoveMouse : MessageBody
     {

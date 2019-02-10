@@ -10,6 +10,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using InTheHand.Net.Bluetooth;
 using GormLib;
+using System.Diagnostics;
 
 namespace GormConsoleApp
 {
@@ -17,29 +18,18 @@ namespace GormConsoleApp
     {
         static void Main(string[] args)
         {
-            //Console.WriteLine("Hello world");
-            //while (true)
-            //{
-            //    Console.WriteLine("Moving Mouse");
-            //    Mouse.MoveMouse(10, 10);
-            //    Thread.Sleep(1000);
-            //}
+            Console.WriteLine("Hello world");
+            while (true)
+            {
+                VolumeControls.VolDown();
+                Thread.Sleep(1000);
+            }
 
-            short value = 1;
-            Byte[] bytes = BitConverter.GetBytes(value);
-            bool isLittleEndian = BitConverter.IsLittleEndian;
-            //Console.WriteLine("Finished");
 
-            short aaa = BitConverter.ToInt16(bytes, 0);
+
             Console.ReadLine();
         }
 
-        private static void serverCode() {
-            Guid serviceClass;
-            serviceClass = BluetoothService.SerialPort;
-            var lsnr = new BluetoothListener(serviceClass);
-            lsnr.Start();
-        }
 
 
     }

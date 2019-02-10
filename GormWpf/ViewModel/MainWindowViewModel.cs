@@ -28,6 +28,13 @@ namespace GormLibWpf.ViewModel
             set => Set(ref _startCommand, value);
         }
 
+        private StartClientCommand _startClientCommand = new StartClientCommand();
+        public StartClientCommand StartClientCommand
+        {
+            get { return _startClientCommand; }
+            set => Set(ref _startClientCommand, value);
+        }
+
         #region Constructor
         public MainWindowViewModel() {
             LogHelper lh = new LogHelper();

@@ -9,7 +9,7 @@ using System.Windows.Input;
 
 namespace GormLibWpf.Commands
 {
-    public class StartCommand : ICommand
+    public class StartClientCommand : ICommand
     {
         #pragma warning disable CS0067
         public event EventHandler CanExecuteChanged;
@@ -21,12 +21,13 @@ namespace GormLibWpf.Commands
 
         public void Execute(object parameter)
         {
-            
+
             Task task = new Task(() => {
-                BluetoothServerHandler bluetoothManager = new BluetoothServerHandler();
-                bluetoothManager.ServerStart();
+                BluetoothClientHandler bluetoothManager = new BluetoothClientHandler();
+                bluetoothManager.ClientStart();
             });
             task.Start();
         }
     }
 }
+

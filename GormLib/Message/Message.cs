@@ -6,42 +6,42 @@ using System.Net.Sockets;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GormLib.MessageModel
+namespace GormLib.MessageNS
 {
     public class Message
     {
         public short MessageType;
+        protected int _headerSize = 2;
         public MessageBody MessageBody;
+        private int _messageSize = 10;
+        protected byte[] _received;
 
-        public void Deserialize(Stream stream) {
+        public int Deserialize(Stream stream) {
+            _received = new byte[_messageSize];
+            int bytesRead = 0;
+
             try
             {
-                int offset = 0;
-                byte[] received = new byte[10];
+                bytesRead = stream.Read(_received, 0, _received.Length);
 
-                stream.Read(received, 0, received.Length);
-                //var receivedstring = Encoding.ASCII.GetString(received);
-                //LogHelper.Info(receivedstring);
-                //if (BitConverter.IsLittleEndian) Array.Reverse(received);
-                if (received[0] == 0)
+                if (bytesRead == 0)
                 {
-                    return;
+                    return bytesRead;
                 }
-                MessageType = BitConverter.ToInt16(received, 0);
+                MessageType = BitConverter.ToInt16(_received, 0);
                 LogHelper.Info(string.Format("Message Type {0} received", MessageType.ToString()));
-                offset = offset + 2;
 
                 MessageBody = MessageParser.Parse((MessageType)MessageType);
-                MessageBody.ProcessMessage(received, offset);
+                MessageBody.ProcessMessage(_received, _headerSize);
 
-
+                
             }
             catch (Exception e )
             {
 
                 LogHelper.Error(e.ToString());
             }
-
+            return bytesRead;
         }
 
         public static byte[] ReadFully(Stream input)

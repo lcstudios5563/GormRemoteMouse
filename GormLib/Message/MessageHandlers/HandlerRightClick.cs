@@ -5,13 +5,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GormLib.MessageModel.MessageHandlers
+namespace GormLib.MessageNS.MessageHandlers
 {
-    public class HandlerLeftClick : MessageBody
+    public class HandlerRightClick : MessageBody
     {
         public override void ProcessMessage(byte[] received, int offset)
         {
-            Mouse.DoLeftClick();
+            Mouse.DoRightClick();
         }
     }
 }

@@ -17,7 +17,7 @@ using InTheHand.Net.Sockets;
 using System.Threading;
 using GormLib;
 using System.IO;
-using GormLib.MessageModel;
+using GormLib.MessageNS;
 using GormLibWpf;
 using System.Net.Sockets;
 using GormLibWpf.ViewModel;

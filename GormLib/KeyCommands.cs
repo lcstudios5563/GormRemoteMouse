@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace GormLib
 {
-    public enum MessageType
+    static class KeyCommands
     {
-        MoveMouse = 0,
-        LeftClick = 1,
-        RightClick = 2,
+        public static void LockScreen() {
+            SendKeys.SendWait("^{c}");
+        }
     }
 }

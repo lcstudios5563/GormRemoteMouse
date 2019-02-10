@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GormLib.MessageModel
+namespace GormLib.MessageNS
 {
     public abstract class MessageBody
     {
