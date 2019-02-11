@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
+using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,6 +15,7 @@ namespace GormLibWpf.ViewModel
 {
     public class MainWindowViewModel : INotifyPropertyChanged
     {
+        #region Properties
         private ObservableCollection<StatusUpdateViewModel> _statusUpdates = new ObservableCollection<StatusUpdateViewModel>();
         public ObservableCollection<StatusUpdateViewModel> StatusUpdates
         {
@@ -34,6 +36,9 @@ namespace GormLibWpf.ViewModel
             get { return _startClientCommand; }
             set => Set(ref _startClientCommand, value);
         }
+
+        public string Title = "Gorm " + Assembly.GetExecutingAssembly().GetName().Version;
+        #endregion
 
         #region Constructor
         public MainWindowViewModel() {

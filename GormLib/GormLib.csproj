@@ -47,8 +47,8 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
-    <Reference Include="WindowsInput, Version=1.0.6.0, Culture=neutral, PublicKeyToken=de2685b4776e9c2e, processorArchitecture=MSIL">
-      <HintPath>..\packages\InputSimulatorPlus.1.0.7\lib\net20\WindowsInput.dll</HintPath>
+    <Reference Include="WindowsInput, Version=1.0.0.0, Culture=neutral, PublicKeyToken=9b287f7dc5073cad, processorArchitecture=MSIL">
+      <HintPath>..\packages\InputSimulatorCore.1.0.0\lib\netstandard2.0\WindowsInput.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -57,16 +57,26 @@
     <Compile Include="Bluetooth\BluetoothServerHandler.cs" />
     <Compile Include="KeyCommands.cs" />
     <Compile Include="LogHelper.cs" />
-    <Compile Include="Message\MessageHandlers\HandlerVolDown.cs" />
-    <Compile Include="Message\Message.cs" />
-    <Compile Include="Message\MessageHandlers\HandlerLeftClick.cs" />
-    <Compile Include="Message\MessageHandlers\HandlerMoveMouse.cs" />
-    <Compile Include="Message\MessageHandlers\HandlerRightClick.cs" />
-    <Compile Include="Message\MessageHandlers\HandlerVolMute.cs" />
-    <Compile Include="Message\MessageHandlers\HandlerVolUp.cs" />
-    <Compile Include="Message\MessageParser.cs" />
-    <Compile Include="Message\MessageType.cs" />
-    <Compile Include="Message\MessageBody.cs" />
+    <Compile Include="MessageNS\MessageHandlers\HandlerArrowKeys.cs" />
+    <Compile Include="MessageNS\MessageHandlers\HandlerBroswerShortcuts.cs" />
+    <Compile Include="MessageNS\MessageHandlers\HandlerEnter.cs" />
+    <Compile Include="MessageNS\MessageHandlers\HandlerCtrlAltDel.cs" />
+    <Compile Include="MessageNS\MessageHandlers\HandlerDesktop.cs" />
+    <Compile Include="MessageNS\MessageHandlers\HandlerEsc.cs" />
+    <Compile Include="MessageNS\MessageHandlers\HandlerLockScreen.cs" />
+    <Compile Include="MessageNS\MessageHandlers\HandlerAltTab.cs" />
+    <Compile Include="MessageNS\MessageHandlers\HandlerShutdown.cs" />
+    <Compile Include="MessageNS\MessageHandlers\HandlerTab.cs" />
+    <Compile Include="MessageNS\MessageHandlers\HandlerVolDown.cs" />
+    <Compile Include="MessageNS\Message.cs" />
+    <Compile Include="MessageNS\MessageHandlers\HandlerLeftClick.cs" />
+    <Compile Include="MessageNS\MessageHandlers\HandlerMoveMouse.cs" />
+    <Compile Include="MessageNS\MessageHandlers\HandlerRightClick.cs" />
+    <Compile Include="MessageNS\MessageHandlers\HandlerVolMute.cs" />
+    <Compile Include="MessageNS\MessageHandlers\HandlerVolUp.cs" />
+    <Compile Include="MessageNS\MessageParser.cs" />
+    <Compile Include="MessageNS\MessageType.cs" />
+    <Compile Include="MessageNS\MessageBody.cs" />
     <Compile Include="Mouse.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="CursorSize.cs" />

@@ -19,11 +19,8 @@ namespace GormConsoleApp
         static void Main(string[] args)
         {
             Console.WriteLine("Hello world");
-            while (true)
-            {
-                VolumeControls.VolDown();
-                Thread.Sleep(1000);
-            }
+
+            KeyCommands.CtrlAltDel();
 
 
 

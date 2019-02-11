@@ -55,8 +55,16 @@ namespace GormLib.Bluetooth
 
         public void ServerClose() {
             LogHelper.Info (string.Format("Client disconnected, Stopping Server"));
-            _bluetoothListener.Stop();
-            _bluetoothClient.Dispose();
+            try
+            {
+                _bluetoothListener.Stop();
+                _bluetoothClient.Dispose();
+            }
+            catch (Exception e)
+            {
+
+                LogHelper.Error(e.ToString());
+            }
         }
 
 

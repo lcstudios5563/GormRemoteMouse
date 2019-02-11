@@ -21,52 +21,28 @@ using GormLib.MessageNS;
 using GormLibWpf;
 using System.Net.Sockets;
 using GormLibWpf.ViewModel;
+using MahApps.Metro.Controls;
 
 namespace GormWpf
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class MainWindow : MetroWindow
     {
+        MainWindowViewModel _mainWindowViewModel;
+
         public MainWindow()
         {
             InitializeComponent();
-            DataContext = new MainWindowViewModel();
+            _mainWindowViewModel = new MainWindowViewModel();
+            DataContext = _mainWindowViewModel;
 
-            //LogHelper lh = new LogHelper();
-            //LogHelper.OnlogTextReceived += (a, b) => updateGui(a, b);
-            //Thread blueToothServerConnectThread = new Thread(new ThreadStart(serverConnectThread));
-            //blueToothServerConnectThread.Start();
         }
 
-        private void serverConnectThread() {
-            Guid guid;
-            guid = new Guid("1e9276ca-904e-4cb3-89a4-fd879958d639");
-            BluetoothListener bluetoothListener = new BluetoothListener(guid);
-            bluetoothListener.Start();
-
-            BluetoothClient bluetoothClient = bluetoothListener.AcceptBluetoothClient();
-
-            this.Dispatcher.Invoke(new Action(() =>
-            {
-                updateGui("Info","Client connected");
-            }));
-
-            Stream stream = bluetoothClient.GetStream();
-            while (true)
-            {
-                Message message = new Message();
-                message.Deserialize(stream);
-                //byte[] received = new byte[1024];
-                //stream.Read(received,0, received.Length);
-            }
-
-            // BluetoothManager bluetoothManager = new BluetoothManager();
-        }
-
-        public void updateGui(string status, string text) {
-            
+        private void MetroWindow_Loaded(object sender, RoutedEventArgs e)
+        {
+            this.Title = _mainWindowViewModel.Title;
         }
     }
 }
