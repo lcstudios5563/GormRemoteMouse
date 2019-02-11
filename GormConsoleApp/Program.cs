@@ -20,8 +20,7 @@ namespace GormConsoleApp
         {
             Console.WriteLine("Hello world");
 
-            KeyCommands.CtrlAltDel();
-
+            KeyCommands.Desktop();
 
 
             Console.ReadLine();

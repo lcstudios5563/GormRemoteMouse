@@ -36,32 +36,48 @@ namespace GormLib
         }
 
         public static void LockScreen() {
-            CtrlAltDel();
-            Enter();
+            //_inputSimulator.Keyboard.ModifiedKeyStroke(VirtualKeyCode.LWIN, VirtualKeyCode.VK_L);
+            System.Diagnostics.Process.Start(@"C:\WINDOWS\system32\rundll32.exe", "user32.dll,LockWorkStation");
         }
 
         public static void Shutdown()
         {
-            CtrlAltDel();
-            TabShift();
-            Enter();
+            System.Diagnostics.Process.Start("shutdown","-s");
+        }
+
+        public static void Restart()
+        {
+            System.Diagnostics.Process.Start("shutdown", "-r");
+        }
+
+        public static void LogOff()
+        {
+            System.Diagnostics.Process.Start("shutdown", "-l");
+        }
+
+        public static void Hibernate()
+        {
+            System.Diagnostics.Process.Start("shutdown", "-h");
         }
 
         public static void Desktop()
         {
-            throw new NotImplementedException();
+            _inputSimulator.Keyboard.ModifiedKeyStroke(VirtualKeyCode.LWIN, VirtualKeyCode.VK_D);
         }
 
+        /// <summary>
+        /// Cant be done https://stackoverflow.com/questions/33726436/how-can-i-simulate-ctrl-alt-del
+        /// </summary>
         public static void CtrlAltDel() {
-            //SendKeys.SendWait("^%{DEL}");
-            _modifierKeyCodes = new List<VirtualKeyCode>();
-            _modifierKeyCodes.Add(VirtualKeyCode.CONTROL);
-            _modifierKeyCodes.Add(VirtualKeyCode.RMENU);
+            //_modifierKeyCodes = new List<VirtualKeyCode>();
+            //_modifierKeyCodes.Add(VirtualKeyCode.CONTROL);
+            //_modifierKeyCodes.Add(VirtualKeyCode.MENU);
 
-            _virtualKeyCodes = new List<VirtualKeyCode>();
-            _virtualKeyCodes.Add(VirtualKeyCode.DELETE);
+            //_virtualKeyCodes = new List<VirtualKeyCode>();
+            //_virtualKeyCodes.Add(VirtualKeyCode.DELETE);
 
-            _inputSimulator.Keyboard.ModifiedKeyStroke(_modifierKeyCodes, _virtualKeyCodes);
+            //_inputSimulator.Keyboard.ModifiedKeyStroke(_modifierKeyCodes, _virtualKeyCodes);
+            throw new NotImplementedException();
         }
 
         public static void Esc() {
