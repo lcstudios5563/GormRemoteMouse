@@ -10,7 +10,15 @@ namespace GormLib.MessageNS.MessageHandlers
     {
         public override void ProcessMessage(byte[] received, int offset)
         {
-            throw new NotImplementedException();
+            bool useShift = BitConverter.ToBoolean(received, offset);
+            if (useShift)
+            {
+                KeyCommands.TabShift();
+            }
+            else
+            {
+                KeyCommands.Tab();
+            }
         }
     }
 }

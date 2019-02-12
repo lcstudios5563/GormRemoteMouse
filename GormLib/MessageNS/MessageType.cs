@@ -20,7 +20,7 @@ namespace GormLib.MessageNS
         LockScreen,
         Shutdown,
         Desktop,
-        CtrlAltDel,
+        CloseWindow,
         Esc,
         Enter,
         ArrowKeys,

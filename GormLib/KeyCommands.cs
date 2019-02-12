@@ -65,10 +65,15 @@ namespace GormLib
             _inputSimulator.Keyboard.ModifiedKeyStroke(VirtualKeyCode.LWIN, VirtualKeyCode.VK_D);
         }
 
+        public static void CloseWindow()
+        {
+            _inputSimulator.Keyboard.ModifiedKeyStroke(VirtualKeyCode.MENU, VirtualKeyCode.F4);
+        }
+
         /// <summary>
         /// Cant be done https://stackoverflow.com/questions/33726436/how-can-i-simulate-ctrl-alt-del
         /// </summary>
-        public static void CtrlAltDel() {
+        private static void CtrlAltDel() {
             //_modifierKeyCodes = new List<VirtualKeyCode>();
             //_modifierKeyCodes.Add(VirtualKeyCode.CONTROL);
             //_modifierKeyCodes.Add(VirtualKeyCode.MENU);

@@ -10,7 +10,23 @@ namespace GormLib.MessageNS.MessageHandlers
     {
         public override void ProcessMessage(byte[] received, int offset)
         {
-            throw new NotImplementedException();
+            short direction = BitConverter.ToInt16(received, offset);
+            switch (direction)
+            {
+
+                default:
+                    KeyCommands.Left();
+                    break;
+                case 1:
+                    KeyCommands.Up();
+                    break;
+                case 2:
+                    KeyCommands.Down();
+                    break;
+                case 3:
+                    KeyCommands.Right();
+                    break;
+            }
         }
     }
 }

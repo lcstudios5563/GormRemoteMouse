@@ -10,7 +10,7 @@ namespace GormLib.MessageNS.MessageHandlers
     {
         public override void ProcessMessage(byte[] received, int offset)
         {
-            throw new NotImplementedException();
+            KeyCommands.Desktop();
         }
     }
 }

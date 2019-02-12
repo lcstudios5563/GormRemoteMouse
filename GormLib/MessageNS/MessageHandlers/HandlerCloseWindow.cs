@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace GormLib.MessageNS.MessageHandlers
 {
-    public class HandlerBroswerShortcuts : MessageBody
+    public class HandlerCloseWindow : MessageBody
     {
         public override void ProcessMessage(byte[] received, int offset)
         {
-            throw new NotImplementedException();
+            KeyCommands.CloseWindow();
         }
     }
 }

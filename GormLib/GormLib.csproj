@@ -57,10 +57,10 @@
     <Compile Include="Bluetooth\BluetoothServerHandler.cs" />
     <Compile Include="KeyCommands.cs" />
     <Compile Include="LogHelper.cs" />
+    <Compile Include="MessageNS\MessageHandlers\HandlerCloseWindow.cs" />
     <Compile Include="MessageNS\MessageHandlers\HandlerArrowKeys.cs" />
-    <Compile Include="MessageNS\MessageHandlers\HandlerBroswerShortcuts.cs" />
+    <Compile Include="MessageNS\MessageHandlers\HandlerBrowserShortcuts.cs" />
     <Compile Include="MessageNS\MessageHandlers\HandlerEnter.cs" />
-    <Compile Include="MessageNS\MessageHandlers\HandlerCtrlAltDel.cs" />
     <Compile Include="MessageNS\MessageHandlers\HandlerDesktop.cs" />
     <Compile Include="MessageNS\MessageHandlers\HandlerEsc.cs" />
     <Compile Include="MessageNS\MessageHandlers\HandlerLockScreen.cs" />
