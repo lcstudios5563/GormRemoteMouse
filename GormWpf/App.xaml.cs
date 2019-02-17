@@ -35,7 +35,7 @@ namespace GormWpf
             CreateContextMenu();
 
             //log4net.Config.XmlConfigurator.Configure();
-            LoggerConfig.Setup();
+            LoggerConfig.Setup(StringHelper.AppName);
         }
 
         private void CreateContextMenu()

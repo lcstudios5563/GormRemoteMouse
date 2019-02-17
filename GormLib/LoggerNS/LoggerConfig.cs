@@ -18,7 +18,7 @@ namespace GormLib.LoggerNS
         /// Call Setup during App Start
         /// https://stackoverflow.com/questions/16336917/can-you-configure-log4net-in-code-instead-of-using-a-config-file
         /// </summary>
-        public static void Setup()
+        public static void Setup(string appName)
         {
             Hierarchy hierarchy = (Hierarchy)LogManager.GetRepository();
 
@@ -27,18 +27,18 @@ namespace GormLib.LoggerNS
             patternLayout.ActivateOptions();
 
             string filePath = string.Format("{0}\\{1}\\", 
-                Environment.GetFolderPath(System.Environment.SpecialFolder.LocalApplicationData), StringHelper.AppName);
+                Environment.GetFolderPath(System.Environment.SpecialFolder.LocalApplicationData), appName);
 
             RollingFileAppender InfoRfa = CreateRollingFileAppender(
-                string.Format("{0}Info.{1}.log", filePath, StringHelper.AppName), patternLayout,
+                string.Format("{0}Info.{1}.log", filePath, appName), patternLayout,
                 5, "5mb", Level.Info);
             hierarchy.Root.AddAppender(InfoRfa);
             RollingFileAppender WarnRfa = CreateRollingFileAppender(
-                string.Format("{0}Warn.{1}.log", filePath, StringHelper.AppName), patternLayout,
+                string.Format("{0}Warn.{1}.log", filePath, appName), patternLayout,
                 5, "5mb", Level.Warn);
             hierarchy.Root.AddAppender(WarnRfa);
             RollingFileAppender ErrorRfa = CreateRollingFileAppender(
-                string.Format("{0}Error.{1}.log", filePath, StringHelper.AppName), patternLayout,
+                string.Format("{0}Error.{1}.log", filePath, appName), patternLayout,
                 5, "5mb", Level.Error);
             hierarchy.Root.AddAppender(ErrorRfa);
 
