@@ -6,11 +6,11 @@
         xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
         xmlns:local="clr-namespace:GormWpf"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525" Loaded="MetroWindow_Loaded">
+        Title="Gorm" Height="350" Width="525" Loaded="MetroWindow_Loaded">
     <Grid>
         <DataGrid ItemsSource="{Binding Path=StatusUpdates}" Margin="10,0,105,10"/>
 
-        <Button x:Name="StartButton" Command="{Binding StartCommand}" Content="Start" HorizontalAlignment="Left" Margin="417,10,0,0" VerticalAlignment="Top" Width="74"/>
+        <Button x:Name="StartButton" Command="{Binding StartCommand}" Content="Start" HorizontalAlignment="Left" Margin="433,10,0,0" VerticalAlignment="Top" Width="74"/>
         <!--<Button x:Name="StartClientButton" Command="{Binding StartClientCommand}" Content="Client Start" HorizontalAlignment="Left" Margin="417,40,0,0" VerticalAlignment="Top" Width="74"/>-->
     </Grid>
 </Controls:MetroWindow>

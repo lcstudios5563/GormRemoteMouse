@@ -12,8 +12,6 @@ namespace GormLib
     public static class KeyCommands
     {
         private static InputSimulator _inputSimulator = new InputSimulator();
-        private static List<VirtualKeyCode> _modifierKeyCodes = new List<VirtualKeyCode>();
-        private static List<VirtualKeyCode> _virtualKeyCodes = new List<VirtualKeyCode>();
 
         public static void Tab()
         {
@@ -70,20 +68,10 @@ namespace GormLib
             _inputSimulator.Keyboard.ModifiedKeyStroke(VirtualKeyCode.MENU, VirtualKeyCode.F4);
         }
 
-        /// <summary>
-        /// Cant be done https://stackoverflow.com/questions/33726436/how-can-i-simulate-ctrl-alt-del
-        /// </summary>
-        private static void CtrlAltDel() {
-            //_modifierKeyCodes = new List<VirtualKeyCode>();
-            //_modifierKeyCodes.Add(VirtualKeyCode.CONTROL);
-            //_modifierKeyCodes.Add(VirtualKeyCode.MENU);
-
-            //_virtualKeyCodes = new List<VirtualKeyCode>();
-            //_virtualKeyCodes.Add(VirtualKeyCode.DELETE);
-
-            //_inputSimulator.Keyboard.ModifiedKeyStroke(_modifierKeyCodes, _virtualKeyCodes);
-            throw new NotImplementedException();
-        }
+        //public static void CtrlAltDel() {
+        //    // Cant be done https://stackoverflow.com/questions/33726436/how-can-i-simulate-ctrl-alt-del
+        //    throw new NotImplementedException();
+        //}
 
         public static void Esc() {
             SendKeys.SendWait("{ESC}");

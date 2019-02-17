@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GormLib
+namespace GormLib.LoggerNS
 {
 
     public class LogHelper
@@ -21,7 +21,6 @@ namespace GormLib
                 if (Logger != null)
                 {
                     Logger.Info(text);
-
                 }
                 OnlogTextReceived?.Invoke("Info", text);
             }

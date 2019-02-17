@@ -1,5 +1,6 @@
 ﻿using GormLib;
-using GormLibWpf.Commands;
+using GormLib.LoggerNS;
+using GormWpf.Commands;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -11,7 +12,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 
-namespace GormLibWpf.ViewModel
+namespace GormWpf.ViewModel
 {
     public class MainWindowViewModel : INotifyPropertyChanged
     {

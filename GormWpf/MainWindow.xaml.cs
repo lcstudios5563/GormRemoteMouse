@@ -18,9 +18,8 @@ using System.Threading;
 using GormLib;
 using System.IO;
 using GormLib.MessageNS;
-using GormLibWpf;
 using System.Net.Sockets;
-using GormLibWpf.ViewModel;
+using GormWpf.ViewModel;
 using MahApps.Metro.Controls;
 
 namespace GormWpf

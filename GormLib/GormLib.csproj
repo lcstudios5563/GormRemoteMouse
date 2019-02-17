@@ -55,8 +55,10 @@
     <Compile Include="Bluetooth\AbstractBluetoothHandler.cs" />
     <Compile Include="Bluetooth\BluetoothClientHandler.cs" />
     <Compile Include="Bluetooth\BluetoothServerHandler.cs" />
+    <Compile Include="BroswerShortcuts.cs" />
     <Compile Include="KeyCommands.cs" />
-    <Compile Include="LogHelper.cs" />
+    <Compile Include="LoggerNS\LoggerConfig.cs" />
+    <Compile Include="LoggerNS\LogHelper.cs" />
     <Compile Include="MessageNS\MessageHandlers\HandlerCloseWindow.cs" />
     <Compile Include="MessageNS\MessageHandlers\HandlerArrowKeys.cs" />
     <Compile Include="MessageNS\MessageHandlers\HandlerBrowserShortcuts.cs" />
@@ -80,6 +82,7 @@
     <Compile Include="Mouse.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="CursorSize.cs" />
+    <Compile Include="StringHelper.cs" />
     <Compile Include="VolumeControls.cs" />
   </ItemGroup>
   <ItemGroup>

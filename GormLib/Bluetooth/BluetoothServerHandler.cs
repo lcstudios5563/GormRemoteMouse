@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using GormLib.MessageNS;
 using System.Threading;
+using GormLib.LoggerNS;
 
 namespace GormLib.Bluetooth
 {
