@@ -14,11 +14,11 @@ namespace GormLib.MessageNS
         public short MessageType;
         protected int _headerSize = 2;
         public MessageBody MessageBody;
-        private int _messageSize = 10;
+        static public int MessageSize = 10;
         protected byte[] _received;
 
         public int Deserialize(Stream stream) {
-            _received = new byte[_messageSize];
+            _received = new byte[MessageSize];
             int bytesRead = 0;
 
             try

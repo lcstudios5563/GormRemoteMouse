@@ -24,6 +24,7 @@ namespace GormLib.MessageNS
         Esc,
         Enter,
         ArrowKeys,
-        BrowserShortcuts
+        BrowserShortcuts,
+        Text
     }
 }

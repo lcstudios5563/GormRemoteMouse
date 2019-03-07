@@ -45,6 +45,8 @@ namespace GormLib.MessageNS
                     return new HandlerArrowKeys();
                 case MessageType.BrowserShortcuts:
                     return new HandlerBrowserShortcuts();
+                case MessageType.Text:
+                    return new HandlerBrowserShortcuts();
                 default:
                     return null;
 

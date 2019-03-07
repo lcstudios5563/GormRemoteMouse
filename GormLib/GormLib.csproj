@@ -76,6 +76,7 @@
     <Compile Include="MessageNS\MessageHandlers\HandlerRightClick.cs" />
     <Compile Include="MessageNS\MessageHandlers\HandlerVolMute.cs" />
     <Compile Include="MessageNS\MessageHandlers\HandlerVolUp.cs" />
+    <Compile Include="MessageNS\MessageHandlers\HandlerText.cs" />
     <Compile Include="MessageNS\MessageParser.cs" />
     <Compile Include="MessageNS\MessageType.cs" />
     <Compile Include="MessageNS\MessageBody.cs" />
