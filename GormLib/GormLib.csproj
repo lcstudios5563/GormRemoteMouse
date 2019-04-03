@@ -59,6 +59,8 @@
     <Compile Include="KeyCommands.cs" />
     <Compile Include="LoggerNS\LoggerConfig.cs" />
     <Compile Include="LoggerNS\LogHelper.cs" />
+    <Compile Include="MessageNS\MessageHandlers\HandlerRestart.cs" />
+    <Compile Include="MessageNS\MessageHandlers\HandlerBackspace.cs" />
     <Compile Include="MessageNS\MessageHandlers\HandlerCloseWindow.cs" />
     <Compile Include="MessageNS\MessageHandlers\HandlerArrowKeys.cs" />
     <Compile Include="MessageNS\MessageHandlers\HandlerBrowserShortcuts.cs" />
@@ -68,6 +70,7 @@
     <Compile Include="MessageNS\MessageHandlers\HandlerLockScreen.cs" />
     <Compile Include="MessageNS\MessageHandlers\HandlerAltTab.cs" />
     <Compile Include="MessageNS\MessageHandlers\HandlerShutdown.cs" />
+    <Compile Include="MessageNS\MessageHandlers\HandlerSleep.cs" />
     <Compile Include="MessageNS\MessageHandlers\HandlerTab.cs" />
     <Compile Include="MessageNS\MessageHandlers\HandlerVolDown.cs" />
     <Compile Include="MessageNS\Message.cs" />

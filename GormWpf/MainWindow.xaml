@@ -10,7 +10,7 @@
     <Grid>
         <DataGrid ItemsSource="{Binding Path=StatusUpdates}" Margin="10,0,105,10"/>
 
-        <Button x:Name="StartButton" Command="{Binding StartCommand}" Content="Start" HorizontalAlignment="Left" Margin="433,10,0,0" VerticalAlignment="Top" Width="74"/>
+        <Button x:Name="StartButton" Command="{Binding StartCommand}" Content="Start" HorizontalAlignment="Right" Margin="0,10,10,0" VerticalAlignment="Top" Width="74"/>
         <!--<Button x:Name="StartClientButton" Command="{Binding StartClientCommand}" Content="Client Start" HorizontalAlignment="Left" Margin="417,40,0,0" VerticalAlignment="Top" Width="74"/>-->
     </Grid>
 </Controls:MetroWindow>

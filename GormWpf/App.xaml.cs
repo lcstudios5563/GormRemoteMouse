@@ -23,16 +23,16 @@ namespace GormWpf
         private bool _isExit;
         protected override void OnStartup(StartupEventArgs e)
         {
-            base.OnStartup(e);
-            MainWindow = new MainWindow();
-            MainWindow.Closing += MainWindow_Closing;
+            //base.OnStartup(e);
+            //MainWindow = new MainWindow();
+            //MainWindow.Closing += MainWindow_Closing;
 
-            _notifyIcon = new System.Windows.Forms.NotifyIcon();
-            _notifyIcon.DoubleClick += (s, args) => ShowMainWindow();
-            _notifyIcon.Icon = GormWpf.Properties.Resources.Gorm;
-            _notifyIcon.Visible = true;
+            //_notifyIcon = new System.Windows.Forms.NotifyIcon();
+            //_notifyIcon.DoubleClick += (s, args) => ShowMainWindow();
+            //_notifyIcon.Icon = GormWpf.Properties.Resources.Gorm;
+            //_notifyIcon.Visible = true;
 
-            CreateContextMenu();
+            //CreateContextMenu();
 
             //log4net.Config.XmlConfigurator.Configure();
             LoggerConfig.Setup(StringHelper.AppName);

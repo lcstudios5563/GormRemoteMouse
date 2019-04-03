@@ -45,6 +45,8 @@ namespace GormWpf.ViewModel
         public MainWindowViewModel() {
             LogHelper lh = new LogHelper();
             LogHelper.OnlogTextReceived += (a, b) => UpdateStatusGrid(a, b);
+
+            _startCommand.Execute(null);
         }
         #endregion
 

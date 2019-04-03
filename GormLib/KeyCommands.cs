@@ -65,7 +65,7 @@ namespace GormLib
 
         public static void CloseWindow()
         {
-            _inputSimulator.Keyboard.ModifiedKeyStroke(VirtualKeyCode.MENU, VirtualKeyCode.F4);
+            SendKeys.SendWait("(%{F4})");
         }
 
         //public static void CtrlAltDel() {
@@ -80,6 +80,10 @@ namespace GormLib
         public static void Enter()
         {
             SendKeys.SendWait("{ENTER}");
+        }
+
+        public static void Backspace() {
+            SendKeys.SendWait("{BACKSPACE}");
         }
 
         public static void Left()

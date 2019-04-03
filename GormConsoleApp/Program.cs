@@ -20,7 +20,7 @@ namespace GormConsoleApp
         {
             Console.WriteLine("Hello world");
 
-            //KeyCommands.Desktop();
+            KeyCommands.Restart();
 
 
             Console.ReadLine();

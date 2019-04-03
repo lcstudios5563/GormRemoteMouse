@@ -25,6 +25,9 @@ namespace GormLib.MessageNS
         Enter,
         ArrowKeys,
         BrowserShortcuts,
+        Backspace,
+        Sleep,
+        Restart,
         Text
     }
 }

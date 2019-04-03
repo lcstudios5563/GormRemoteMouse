@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GormLib.LoggerNS;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,10 +12,19 @@ namespace GormLib.MessageNS.MessageHandlers
     {
         public override void ProcessMessage(byte[] received, int offset)
         {
-            byte[] byteStr = new byte[Message.MessageSize - offset];
-            received.CopyTo(byteStr, offset);
-            string strReceived = Encoding.ASCII.GetString(byteStr);
-            SendKeys.SendWait(strReceived);
+            try
+            {
+                byte[] byteStr = new byte[Message.MessageSize - offset];
+                Buffer.BlockCopy(received, offset, byteStr, 0, byteStr.Length);
+                string strReceived = Encoding.ASCII.GetString(byteStr);
+                SendKeys.SendWait(strReceived);
+            }
+            catch (Exception e)
+            {
+
+                LogHelper.Error(e.ToString());
+            }
+
         }
     }
 }
