@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.27004.2002
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29020.237
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GormConsoleApp", "GormConsoleApp\GormConsoleApp.csproj", "{C507A4C3-9F08-4C8E-9BDC-32C8ACE1B242}"
 EndProject
@@ -10,6 +10,11 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GormWpf", "GormWpf\GormWpf.csproj", "{E46E6156-970B-4C7F-9234-D02F2C3E2406}"
 EndProject
 Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Setup", "Setup\Setup.vdproj", "{6F829DE6-42BE-4E7C-B1DE-E89FC5F05641}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Release", "Release", "{D9033F14-7ABA-42D0-A4D9-195967FE1B83}"
+	ProjectSection(SolutionItems) = preProject
+		Release\GormRemoteMouse 1.2.0.0.msi = Release\GormRemoteMouse 1.2.0.0.msi
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

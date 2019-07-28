@@ -15,25 +15,24 @@ namespace GormLib.MessageNS
         protected int _headerSize = 2;
         public MessageBody MessageBody;
         static public int MessageSize = 10;
-        protected byte[] _received;
 
         public int Deserialize(Stream stream) {
-            _received = new byte[MessageSize];
+            byte[] received = new byte[MessageSize];
             int bytesRead = 0;
 
             try
             {
-                bytesRead = stream.Read(_received, 0, _received.Length);
+                bytesRead = stream.Read(received, 0, received.Length);
 
                 if (bytesRead == 0)
                 {
                     return bytesRead;
                 }
-                MessageType = BitConverter.ToInt16(_received, 0);
+                MessageType = BitConverter.ToInt16(received, 0);
                 LogHelper.Info(string.Format("Message Type {0} received", MessageType.ToString()));
 
                 MessageBody = MessageParser.Parse((MessageType)MessageType);
-                MessageBody.ProcessMessage(_received, _headerSize);
+                MessageBody.ProcessMessage(received, _headerSize);
 
                 
             }
@@ -43,6 +42,28 @@ namespace GormLib.MessageNS
                 LogHelper.Error(e.ToString());
             }
             return bytesRead;
+        }
+
+        public void Deserialize(byte[] received)
+        {
+            try
+            {
+                MessageType = BitConverter.ToInt16(received, 0);
+                LogHelper.Info(string.Format("Message Type {0} received", MessageType.ToString()));
+
+                MessageBody = MessageParser.Parse((MessageType)MessageType);
+                if (MessageBody != null)
+                {
+                    MessageBody.ProcessMessage(received, _headerSize);
+                }
+                
+
+            }
+            catch (Exception e)
+            {
+
+                LogHelper.Error(e.ToString());
+            }
         }
 
         public static byte[] ReadFully(Stream input)
