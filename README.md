@@ -9,17 +9,19 @@ User Guide
 
 ![](https://github.com/lcstudios5563/GormRemoteMouse/blob/master/Images/App%20run%20anyway.PNG)
 
-3. Start desktop app and allow access through private network on firewall
+3. Enter "Gorm Remote Mouse" into your search bar and open the program
+
+4. Allow access through private network on firewall
 
 ![](https://github.com/lcstudios5563/GormRemoteMouse/blob/master/Images/App%20firewall%20rule.PNG)
 
-4. Find your local IP as shown on desktop app
+5. Find your local IP as shown on desktop app
 
 ![](https://github.com/lcstudios5563/GormRemoteMouse/blob/master/Images/App%20Ip%20address.PNG)
 
-5. Download android app [here](https://play.google.com/store/apps/details?id=uk.co.lcstudios.mouseemulator)
+6. Download android app [here](https://play.google.com/store/apps/details?id=uk.co.lcstudios.mouseemulator)
 
-6. Enter IP into Android Device by clicking on wifi icon in app
+7. Enter IP into Android Device by clicking on wifi icon in app
 
 ![](https://lh3.googleusercontent.com/Wl3CRzblHlIxCnbSB1n7BqODh5tRCwhMqgWWMjlINyBML_2AJhVvfX8Aj1VAqT2rDQ=w720-h310-rw)
 
