@@ -26,5 +26,4 @@ User Guide
 ![](https://lh3.googleusercontent.com/Wl3CRzblHlIxCnbSB1n7BqODh5tRCwhMqgWWMjlINyBML_2AJhVvfX8Aj1VAqT2rDQ=w720-h310-rw)
 
 
-I hope you enjoy the app as i have creating it
-Please consider purchasing upgrade to access extra short cut commands.
+Fingers crossed, you can now control your pc from the app :)
