@@ -3,7 +3,7 @@ Use Gorm Remote Mouse to control your pc from your android device.
 
 User Guide
 
-1. Download the Gorm Desktop App [here](https://github.com/lcstudios5563/GormRemoteMouse/raw/master/Release/GormRemoteMouse%201.2.0.0.msi)
+1. Download the Gorm Desktop App [here](https://github.com/lcstudios5563/GormRemoteMouse/raw/master/Release/GormRemoteMouse.msi)
 
 2. Run installer, click "more info" and "run anyway"
 

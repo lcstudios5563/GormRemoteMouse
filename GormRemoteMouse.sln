@@ -13,7 +13,7 @@ Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Setup", "Setup\Setup.vdproj
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Release", "Release", "{D9033F14-7ABA-42D0-A4D9-195967FE1B83}"
 	ProjectSection(SolutionItems) = preProject
-		Release\GormRemoteMouse 1.2.0.0.msi = Release\GormRemoteMouse 1.2.0.0.msi
+		Release\GormRemoteMouse.msi = Release\GormRemoteMouse.msi
 	EndProjectSection
 EndProject
 Global

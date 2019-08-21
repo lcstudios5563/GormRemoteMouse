@@ -19,35 +19,44 @@ namespace GormLib.TcpNS
 
         public void Server(string address, int port)
         {
-            LogHelper.Info("Ip Address: " + address);
-            Heartbeat();
-
-            byte[] data = new byte[Message.MessageSize];
-            IPAddress localAddr = IPAddress.Parse(address);
-            IPEndPoint ipep = new IPEndPoint(localAddr, port);
-            UdpClient newsock = new UdpClient(ipep);
-
-            Console.WriteLine("Waiting for a client...");
-
-            IPEndPoint sender = new IPEndPoint(IPAddress.Any, 0);
-
-            //data = newsock.Receive(ref sender);
-
-            //Console.WriteLine("Message received from {0}:", sender.ToString());
-            //Console.WriteLine(Encoding.ASCII.GetString(data, 0, data.Length));
-
-            //string welcome = "Welcome to my test server";
-            //data = Encoding.ASCII.GetBytes(welcome);
-            //newsock.Send(data, data.Length, sender);
-
-            while (true)
+            try
             {
-                data = newsock.Receive(ref sender);
-                Message message = new Message();
-                message.Deserialize(data);
+                LogHelper.Info("Ip Address: " + address);
+                Heartbeat();
+
+                byte[] data = new byte[Message.MessageSize];
+                IPAddress localAddr = IPAddress.Parse(address);
+                IPEndPoint ipep = new IPEndPoint(localAddr, port);
+                UdpClient newsock = new UdpClient(ipep);
+
+                Console.WriteLine("Waiting for a client...");
+
+                IPEndPoint sender = new IPEndPoint(IPAddress.Any, 0);
+
+                //data = newsock.Receive(ref sender);
+
+                //Console.WriteLine("Message received from {0}:", sender.ToString());
                 //Console.WriteLine(Encoding.ASCII.GetString(data, 0, data.Length));
+
+                //string welcome = "Welcome to my test server";
+                //data = Encoding.ASCII.GetBytes(welcome);
                 //newsock.Send(data, data.Length, sender);
+
+                while (true)
+                {
+                    data = newsock.Receive(ref sender);
+                    Message message = new Message();
+                    message.Deserialize(data);
+                    //Console.WriteLine(Encoding.ASCII.GetString(data, 0, data.Length));
+                    //newsock.Send(data, data.Length, sender);
+                }
             }
+            catch (Exception e)
+            {
+
+                LogHelper.Error(e.ToString());
+            }
+
         }
 
 
@@ -60,6 +69,8 @@ namespace GormLib.TcpNS
                 {
                     try
                     {
+                        Thread.Sleep(5000);
+
                         bool alreadyinuse = System.Net.NetworkInformation.IPGlobalProperties
                         .GetIPGlobalProperties()
                         .GetActiveUdpListeners()
@@ -67,17 +78,16 @@ namespace GormLib.TcpNS
 
                         if (alreadyinuse)
                         {
-                            //LogHelper.Info("Port open");
+                            //LogHelper.Info("Port in use");
                         }
                         else {
                             LogHelper.Info("Port closed");
                         }
-                        Thread.Sleep(10000);
 
                     }
-                    catch (Exception)
+                    catch (Exception e)
                     {
-                        Console.WriteLine("Port closed");
+                        LogHelper.Error(e.ToString());
                     }
                 }
 
